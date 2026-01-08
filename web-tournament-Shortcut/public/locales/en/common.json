@@ -1,0 +1,58 @@
+{
+  "home": "Home",
+  "leaderboard": "Leaderboard",
+  "tournament": "Final Tournament",
+  "changelog": "Updates",
+  "team": "Team",
+  "search": "Search",
+  "login": "Login",
+  "logout": "Logout",
+  "my_profile": "My Profile",
+  "admin_panel": "Admin Panel",
+  "see_all": "See All",
+  "top_clans": "Top Clans",
+  "loading": "Loading",
+
+  "welcome": "Welcome to",
+  "welcome_description": "Face the best trainers, form an elite clan, and qualify for the final cash prize tournament!",
+  "view_leaderboard": "View Leaderboard",
+
+  "latest_news": "Latest News",
+  "error_loading_announcements": "Error loading announcements",
+
+  "announcement1_title": "New season has begun!",
+  "announcement1_content": "Season 3 has just started! Prepare your decks and showcase your trainer skills!",
+  "announcement2_title": "Monthly Tournament This Weekend",
+  "announcement2_content": "Join us for our monthly tournament this Saturday. Many prizes to be won!",
+  "announcement3_title": "Combat Rules Update",
+  "announcement3_content": "Check out the new rules for Season 3. Some cards have been adjusted.",
+
+  "season_end": "Season End",
+  "days": "Days",
+  "hours": "Hours",
+  "minutes": "Minutes",
+  "seconds": "Seconds",
+
+  "navigation": "Navigation",
+  "community": "Community",
+  "all_rights_reserved": "All rights reserved.",
+  "made_with_love": "Made with ❤️ by",
+  "footer_description": "Face the best trainers, form an elite clan, and qualify for the final tournament!",
+
+  "how_it_works": "How It Works",
+  "step1": "Create Your Profile",
+  "step1_desc": "Join the league and customize your trainer profile.",
+  "step2": "Join a Clan",
+  "step2_desc": "Be part of a team to participate in clan competitions.",
+  "step3": "Battle and Progress",
+  "step3_desc": "Face other players to earn ELO points and improve your ranking.",
+  "step4": "Qualify for the Tournament",
+  "step4_desc": "The top 3 clans qualify for the final cash prize tournament!",
+
+  "switch_to_dark": "Switch to dark mode",
+  "switch_to_light": "Switch to light mode",
+  "dark_mode": "Dark mode",
+  "light_mode": "Light mode",
+
+  "deck_builder": "Deck Builder"
+}

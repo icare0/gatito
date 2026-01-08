@@ -1,0 +1,580 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Définir les transitions de couleur pour le passage mode clair/sombre */
+@layer base {
+  /* Transitions de base pour les changements de mode */
+  html {
+    transition-property: background-color, color;
+    transition-duration: 300ms;
+  }
+  
+  body {
+    transition-property: background-color, color;
+    transition-duration: 300ms;
+  }
+  
+  /* Styles spécifiques au mode sombre */
+  .dark {
+    color-scheme: dark;
+  }
+  
+  /* Fix pour le fond en mode sombre - sans utiliser @apply pour éviter les dépendances circulaires */
+  .dark body {
+    background: linear-gradient(to bottom, rgb(17, 24, 39), rgb(23, 23, 35));
+    color: rgb(243, 244, 246);
+  }
+  
+  /* Fix pour le conteneur principal */
+  .dark .min-h-screen.bg-gradient-to-b.from-blue-50.to-blue-100 {
+    background: linear-gradient(to bottom, rgb(17, 24, 39), rgb(23, 23, 35));
+  }
+}
+
+@layer components {
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  .animate-float-delayed {
+    animation: float-delayed 4s ease-in-out infinite;
+  }
+  
+  /* Couleurs de base pour le mode sombre */
+  .dark .bg-white {
+    background-color: rgb(31, 41, 55); /* Équivalent à bg-gray-800 */
+  }
+  
+  .dark .text-gray-900 {
+    color: rgb(243, 244, 246); /* Équivalent à text-gray-100 */
+  }
+  
+  .dark .text-gray-800 {
+    color: rgb(229, 231, 235); /* Équivalent à text-gray-200 */
+  }
+  
+  .dark .text-gray-700 {
+    color: rgb(209, 213, 219); /* Équivalent à text-gray-300 */
+  }
+  
+  .dark .text-gray-600 {
+    color: rgb(156, 163, 175); /* Équivalent à text-gray-400 */
+  }
+  
+  .dark .text-gray-500 {
+    color: rgb(156, 163, 175); /* Équivalent à text-gray-400 */
+  }
+  
+  .dark .shadow-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Mode sombre pour les cartes et conteneurs */
+  .dark .bg-white.rounded-lg {
+    background-color: rgb(31, 41, 55);
+    border-color: rgb(55, 65, 81);
+  }
+  
+  /* Ajustements pour les éléments de navigation */
+  .dark .bg-blue-700 {
+    background-color: rgb(55, 65, 81); /* Équivalent à bg-gray-700 */
+  }
+  
+  /* Bordures en mode sombre */
+  .dark .border-gray-200 {
+    border-color: rgb(55, 65, 81); /* Équivalent à border-gray-700 */
+  }
+  
+  .dark .border-gray-300 {
+    border-color: rgb(75, 85, 99); /* Équivalent à border-gray-600 */
+  }
+  
+  /* Couleurs accentuées pour le mode sombre - utilisées directement sans @apply */
+  .dark .bg-blue-50 {
+    background-color: rgba(30, 58, 138, 0.3); /* Équivalent à bg-blue-900/30 */
+    color: rgb(219, 234, 254); /* Équivalent à text-blue-100 */
+  }
+  
+  .dark .bg-green-50 {
+    background-color: rgba(6, 78, 59, 0.3); /* Équivalent à bg-green-900/30 */
+    color: rgb(209, 250, 229); /* Équivalent à text-green-100 */
+  }
+  
+  /* Amélioration des couleurs de texte sur les fonds de couleur */
+  .dark .text-blue-600 {
+    color: rgb(147, 197, 253); /* text-blue-300 */
+  }
+  
+  .dark .text-blue-800 {
+    color: rgb(191, 219, 254); /* text-blue-200 */
+  }
+  
+  .dark .text-blue-900 {
+    color: rgb(219, 234, 254); /* text-blue-100 */
+  }
+  
+  .dark .bg-blue-600.text-white {
+    background-color: rgb(37, 99, 235); /* bg-blue-600 */
+    color: white;
+  }
+  
+  .dark .bg-yellow-50 {
+    background-color: rgba(120, 53, 15, 0.3); /* Équivalent à bg-yellow-900/30 */
+    color: rgb(254, 249, 195); /* Équivalent à text-yellow-100 */
+  }
+  
+  .dark .bg-red-50 {
+    background-color: rgba(127, 29, 29, 0.3); /* Équivalent à bg-red-900/30 */
+    color: rgb(254, 226, 226); /* Équivalent à text-red-100 */
+  }
+  
+  .dark .bg-purple-50 {
+    background-color: rgba(76, 29, 149, 0.3); /* Équivalent à bg-purple-900/30 */
+    color: rgb(237, 233, 254); /* Équivalent à text-purple-100 */
+  }
+  
+  .dark .bg-gray-50 {
+    background-color: rgba(31, 41, 55, 0.7); /* Équivalent à bg-gray-800/70 */
+    color: rgb(209, 213, 219); /* Équivalent à text-gray-300 */
+  }
+  
+  .dark .bg-amber-50 {
+    background-color: rgba(120, 53, 15, 0.3); /* Équivalent à bg-amber-900/30 */
+    color: rgb(254, 243, 199); /* Équivalent à text-amber-100 */
+  }
+  
+  /* Couleurs des boutons */
+  .dark .bg-blue-600 {
+    background-color: rgb(29, 78, 216); /* bg-blue-700 */
+  }
+  
+  .dark .hover\:bg-blue-700:hover {
+    background-color: rgb(30, 64, 175); /* hover:bg-blue-800 */
+  }
+  
+  .dark .bg-gray-100 {
+    background-color: rgb(31, 41, 55); /* bg-gray-800 */
+  }
+  
+  .dark .bg-gray-200 {
+    background-color: rgb(55, 65, 81); /* bg-gray-700 */
+  }
+  
+  /* Inputs en mode sombre */
+  .dark input,
+  .dark textarea,
+  .dark select {
+    background-color: rgb(55, 65, 81); /* bg-gray-700 */
+    border-color: rgb(75, 85, 99); /* border-gray-600 */
+    color: rgb(229, 231, 235); /* text-gray-200 */
+  }
+  
+  /* Correction spécifique pour les textes foncés sur fond clair */
+  .dark .bg-yellow-400.text-blue-900,
+  .dark .bg-yellow-100.text-yellow-800,
+  .dark .bg-yellow-100.text-gray-800 {
+    color: rgb(17, 24, 39); /* Assure que le texte reste foncé sur les fonds clairs */
+  }
+  
+  .dark input::placeholder,
+  .dark textarea::placeholder {
+    color: rgb(156, 163, 175); /* text-gray-400 */
+  }
+  
+  /* Styles pour les sections de gradient */
+  .dark .bg-gradient-to-r.from-blue-600.to-blue-800 {
+    background: linear-gradient(to right, rgb(30, 58, 138), rgb(30, 58, 138));
+  }
+  
+  .dark .bg-gradient-to-b.from-blue-700.to-blue-900 {
+    background: linear-gradient(to bottom, rgb(31, 41, 55), rgb(17, 24, 39));
+  }
+  
+  /* Corrections spécifiques pour la page de tournoi */
+  .dark .prose {
+    color: rgb(209, 213, 219); /* text-gray-300 */
+  }
+  
+  .dark .prose h2, 
+  .dark .prose h3 {
+    color: rgb(229, 231, 235); /* text-gray-200 */
+  }
+  
+  .dark .prose ul li {
+    color: rgb(209, 213, 219); /* text-gray-300 */
+  }
+  
+  /* Meilleur contraste pour les cartes de tournoi */
+  .dark .border-t-4 {
+    border-top-width: 4px;
+  }
+  
+  .dark .bg-white.rounded-lg.border-t-4 {
+    background-color: rgb(31, 41, 55); /* bg-gray-800 */
+  }
+  
+  .dark .absolute.top-2.right-2 .bg-yellow-400 {
+    background-color: rgb(234, 179, 8); /* Jaune plus vif */
+    color: rgb(17, 24, 39); /* text-gray-900 */
+  }
+  
+  /* Améliorer le style de la section des règles */
+  .dark .prose {
+    max-width: none;
+  }
+  
+  .dark .prose ul {
+    padding-left: 1.5rem;
+  }
+
+  /* ===== NOUVEAUX STYLES POUR LES VUES DE TOURNOI ===== */
+  
+  /* Animations pour les transitions entre vues */
+  .bracket-view-transition {
+    animation: fadeInUp 0.4s ease-out;
+  }
+  
+  /* Animation pour le changement de vue */
+  .view-switching {
+    animation: scaleIn 0.3s ease-out;
+  }
+  
+  /* Hover effects pour les cartes de match */
+  .match-card-hover {
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .match-card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  .dark .match-card-hover:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Styles pour le sélecteur de vue */
+  .view-selector-dropdown {
+    backdrop-filter: blur(8px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .dark .view-selector-dropdown {
+    backdrop-filter: blur(16px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  /* Animation du dropdown */
+  .view-dropdown-enter {
+    animation: dropdownOpen 0.2s ease-out;
+  }
+  
+  /* Styles pour les indicateurs de statut */
+  .status-indicator {
+    animation: pulse 2s infinite;
+  }
+  
+  .status-completed {
+    animation: successPulse 0.6s ease-out;
+  }
+  
+  /* Styles pour la vue compacte */
+  .compact-bracket-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(156, 163, 175, 0.5) transparent;
+  }
+  
+  .compact-bracket-scroll::-webkit-scrollbar {
+    height: 6px;
+  }
+  
+  .compact-bracket-scroll::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .compact-bracket-scroll::-webkit-scrollbar-thumb {
+    background-color: rgba(156, 163, 175, 0.5);
+    border-radius: 3px;
+  }
+  
+  .compact-bracket-scroll::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(156, 163, 175, 0.7);
+  }
+  
+  /* Responsive design pour les cartes de match */
+  @media (max-width: 640px) {
+    .match-card-mobile {
+      width: 100%;
+      min-width: auto;
+    }
+    
+    .bracket-controls-mobile {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .view-selector-mobile {
+      width: 100%;
+    }
+  }
+  
+  /* Styles pour les connections entre matchs (vue classique) */
+  .bracket-connection {
+    stroke: #6b7280;
+    stroke-width: 2;
+    fill: none;
+    opacity: 0.6;
+  }
+  
+  .dark .bracket-connection {
+    stroke: #9ca3af;
+  }
+  
+  /* Animation de chargement pour les cartes */
+  .match-card-skeleton {
+    background: linear-gradient(90deg, #f3f4f6 25%, transparent 50%, #f3f4f6 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+  }
+  
+  .dark .match-card-skeleton {
+    background: linear-gradient(90deg, #374151 25%, transparent 50%, #374151 75%);
+    background-size: 200% 100%;
+  }
+  
+  /* Styles pour les tooltips */
+  .tooltip {
+    position: relative;
+  }
+  
+  .tooltip::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #1f2937;
+    color: white;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.375rem;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+    z-index: 50;
+  }
+  
+  .tooltip::after {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(100%);
+    border: 5px solid transparent;
+    border-top-color: #1f2937;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+    z-index: 50;
+  }
+  
+  .tooltip:hover::before,
+  .tooltip:hover::after {
+    opacity: 1;
+  }
+  
+  /* Styles pour la vue verticale */
+  .vertical-bracket-section {
+    border-left: 3px solid #3b82f6;
+    padding-left: 1rem;
+    margin-left: 1rem;
+    position: relative;
+  }
+  
+  .vertical-bracket-section::before {
+    content: '';
+    position: absolute;
+    left: -6px;
+    top: 0;
+    width: 12px;
+    height: 12px;
+    background-color: #3b82f6;
+    border-radius: 50%;
+  }
+  
+  .dark .vertical-bracket-section {
+    border-color: #60a5fa;
+  }
+  
+  .dark .vertical-bracket-section::before {
+    background-color: #60a5fa;
+  }
+  
+  /* Animation d'apparition pour les éléments */
+  .fade-in-sequence > * {
+    opacity: 0;
+    animation: fadeInSequence 0.5s ease-out forwards;
+  }
+  
+  .fade-in-sequence > *:nth-child(1) { animation-delay: 0.1s; }
+  .fade-in-sequence > *:nth-child(2) { animation-delay: 0.2s; }
+  .fade-in-sequence > *:nth-child(3) { animation-delay: 0.3s; }
+  .fade-in-sequence > *:nth-child(4) { animation-delay: 0.4s; }
+  .fade-in-sequence > *:nth-child(5) { animation-delay: 0.5s; }
+  
+  /* Styles pour les contrôles de zoom */
+  .zoom-controls {
+    backdrop-filter: blur(8px);
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .dark .zoom-controls {
+    background-color: rgba(55, 65, 81, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Amélioration des focus states pour l'accessibilité */
+  .bracket-button:focus {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+  }
+  
+  .dark .bracket-button:focus {
+    outline-color: #60a5fa;
+  }
+  
+  /* Styles pour les badges de statut */
+  .status-badge {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 9999px;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .status-badge-pending {
+    background-color: #f3f4f6;
+    color: #6b7280;
+  }
+  
+  .status-badge-in-progress {
+    background-color: #dbeafe;
+    color: #1d4ed8;
+    animation: pulse 2s infinite;
+  }
+  
+  .status-badge-completed {
+    background-color: #dcfce7;
+    color: #166534;
+  }
+  
+  .dark .status-badge-pending {
+    background-color: #374151;
+    color: #9ca3af;
+  }
+  
+  .dark .status-badge-in-progress {
+    background-color: rgba(30, 58, 138, 0.3);
+    color: #93c5fd;
+  }
+  
+  .dark .status-badge-completed {
+    background-color: rgba(6, 78, 59, 0.3);
+    color: #86efac;
+  }
+  
+  /* Styles pour les transitions fluides */
+  .smooth-transition {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Responsive grid pour les matchs */
+  .matches-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  
+  @media (max-width: 640px) {
+    .matches-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes float-delayed {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes dropdownOpen {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes successPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes fadeInSequence {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

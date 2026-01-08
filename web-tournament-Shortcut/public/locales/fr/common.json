@@ -1,0 +1,58 @@
+{
+  "home": "Accueil",
+  "leaderboard": "Classements",
+  "tournament": "Tournoi Final",
+  "changelog": "Mises à jour",
+  "team": "Équipe",
+  "search": "Rechercher",
+  "login": "Se connecter",
+  "logout": "Déconnexion",
+  "my_profile": "Mon profil",
+  "admin_panel": "Panneau d'administration",
+  "see_all": "Voir tout",
+  "top_clans": "Meilleurs clans",
+  "loading": "Chargement",
+
+  "welcome": "Bienvenue sur",
+  "welcome_description": "Affrontez les meilleurs dresseurs, formez un clan d'élite et qualifiez-vous pour le tournoi final avec cashprize !",
+  "view_leaderboard": "Voir le classement",
+
+  "latest_news": "Dernières Actualités",
+  "error_loading_announcements": "Erreur lors du chargement des annonces",
+
+  "announcement1_title": "Début de la nouvelle saison !",
+  "announcement1_content": "La saison 3 vient de commencer ! Préparez vos decks et montrez votre talent de dresseur !",
+  "announcement2_title": "Tournoi mensuel ce week-end",
+  "announcement2_content": "Rejoignez-nous pour notre tournoi mensuel ce samedi. De nombreux prix à gagner !",
+  "announcement3_title": "Mise à jour des règles de combat",
+  "announcement3_content": "Consultez les nouvelles règles pour la saison 3. Certaines cartes ont été ajustées.",
+
+  "season_end": "Fin de la Saison",
+  "days": "Jours",
+  "hours": "Heures",
+  "minutes": "Minutes",
+  "seconds": "Secondes",
+
+  "navigation": "Navigation",
+  "community": "Communauté",
+  "all_rights_reserved": "Tous droits réservés.",
+  "made_with_love": "Fait avec ❤️ par",
+  "footer_description": "Affrontez les meilleurs dresseurs, formez un clan d'élite et qualifiez-vous pour le tournoi final !",
+
+  "how_it_works": "Comment ça marche",
+  "step1": "Créez votre Profil",
+  "step1_desc": "Rejoignez la ligue et personnalisez votre profil de dresseur.",
+  "step2": "Rejoignez un Clan",
+  "step2_desc": "Faites partie d'une équipe pour participer aux compétitions de clan.",
+  "step3": "Combattez et Progressez",
+  "step3_desc": "Affrontez d'autres joueurs pour gagner des points ELO et améliorer votre classement.",
+  "step4": "Qualifiez-vous pour le Tournoi",
+  "step4_desc": "Les 3 meilleurs clans se qualifient pour le tournoi final avec cashprize !",
+
+  "switch_to_dark": "Passer en mode sombre",
+  "switch_to_light": "Passer en mode clair",
+  "dark_mode": "Mode sombre",
+  "light_mode": "Mode clair",
+
+  "deck_builder": "Créateur de Deck"
+}
